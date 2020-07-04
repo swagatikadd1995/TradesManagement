@@ -22,12 +22,18 @@ public class ValidationUtils {
 		
 		validateStockType(tradeDto.getTradeType());
 		
+		if(tradeDto.getTradeShares() < 10 && tradeDto.getTradeShares() > 30)
+			throw new InputValidationException("The traded shares value is between 10 and 30 shares, inclusive.");
 		
 		if(!((MIN_PRICE.compareTo(tradeDto.getTradePrice()) == 0 || MIN_PRICE.compareTo(tradeDto.getTradePrice()) == 1)
 				&& (MAX_PRICE.compareTo(tradeDto.getTradePrice()) == 0 || MAX_PRICE.compareTo(tradeDto.getTradePrice()) == -1)))
 			throw new InputValidationException("The stock price is between 130.42 and 195.65 inclusive.");
 		
 		if(tradeDto.getUser() == null) throw new InputValidationException("User Id and name must required.");
+		
+		if(tradeDto.getUser().getUserId() < 1 || StringUtils.isNotBlank(tradeDto.getUser().getUserName()))
+			throw new InputValidationException("User Id or name can't be empty");
+			
 	}
 	
 

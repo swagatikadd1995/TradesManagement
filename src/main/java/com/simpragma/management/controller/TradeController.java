@@ -2,8 +2,6 @@ package com.simpragma.management.controller;
 
 import java.util.List;
 
-import javax.validation.Valid;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -48,7 +46,7 @@ public class TradeController {
 	}
 	
 	@PostMapping
-	public ResponseEntity<TradeDto> createTrade(@Valid @RequestBody TradeDto tradeDto) {
+	public ResponseEntity<TradeDto> createTrade(@RequestBody TradeDto tradeDto) {
 		log.info("Entering into TradeController.createTrade() ");
 		
 		ValidationUtils.validate(tradeDto);
