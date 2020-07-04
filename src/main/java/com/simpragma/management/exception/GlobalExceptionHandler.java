@@ -16,7 +16,6 @@ public class GlobalExceptionHandler {
 		errorDto.setMessage(exception.getErrorMessage());
 		return new ResponseEntity<>(errorDto, HttpStatus.BAD_REQUEST);
 	}
-
 	
 	@ExceptionHandler(value = DataServiceException.class)
 	private  ResponseEntity<ErrorDto> exceptionHandle(DataServiceException exception) {
@@ -32,4 +31,10 @@ public class GlobalExceptionHandler {
 		return new ResponseEntity<>(errorDto, HttpStatus.NOT_FOUND);
 	}
 
+	@ExceptionHandler(value = Exception.class)
+	private  ResponseEntity<ErrorDto> exceptionHandle(Exception exception) {
+		ErrorDto errorDto = new ErrorDto();
+		errorDto.setMessage(exception.getMessage());
+		return new ResponseEntity<>(errorDto, HttpStatus.INTERNAL_SERVER_ERROR);
+	}
 }
