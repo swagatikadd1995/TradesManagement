@@ -1,0 +1,262 @@
+{
+	"info": {
+		"_postman_id": "bcc30b8d-1ab0-4d4b-88ad-88b17507fb87",
+		"name": "TradesManagement",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "localhost:8080/trade",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n   \"tradeId\": 1,\n   \"tradeType\": \"borrow\",\n   \"user\": {\n  \t\"userId\": 1,\n  \t\"userName\": \"David\"\n   },\n   \"tradeSymbol\": \"AC\",\n   \"tradeShares\": 58,\n   \"tradePrice\": 145.23\n  \n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/trade",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"trade"
+					]
+				},
+				"description": "To create trade details"
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/stocks/DC/price?start=2020-07-03 23:00:02&end=2020-07-03 23:11:21",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n   \"tradeId\": 1,\n   \"tradeType\": \"buy\",\n   \"user\": {\n  \t\"userId\": 1,\n  \t\"userName\": \"David\"\n   },\n   \"tradeSymbol\": \"AC\",\n   \"tradeShares\": 28,\n   \"tradePrice\": 162.17\n  \n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/stocks/DC/price?start=2020-07-03 23:00:02&end=2020-07-03 23:11:21",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"stocks",
+						"DC",
+						"price"
+					],
+					"query": [
+						{
+							"key": "start",
+							"value": "2020-07-03 23:00:02"
+						},
+						{
+							"key": "end",
+							"value": "2020-07-03 23:11:21"
+						}
+					]
+				},
+				"description": "To get the highestprice ,lowestprice and symbol from trade"
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/stocks/AC/trades?type=buy&start=2020-07-03 23:00:02&end=2020-07-03 23:11:21",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n   \"tradeId\": 1,\n   \"tradeType\": \"buy\",\n   \"user\": {\n  \t\"userId\": 1,\n  \t\"userName\": \"David\"\n   },\n   \"tradeSymbol\": \"AC\",\n   \"tradeShares\": 28,\n   \"tradePrice\": 162.17\n  \n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/stocks/AC/trades?type=buy&start=2020-07-03 23:00:02&end=2020-07-03 23:11:21",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"stocks",
+						"AC",
+						"trades"
+					],
+					"query": [
+						{
+							"key": "type",
+							"value": "buy"
+						},
+						{
+							"key": "start",
+							"value": "2020-07-03 23:00:02"
+						},
+						{
+							"key": "end",
+							"value": "2020-07-03 23:11:21"
+						}
+					]
+				},
+				"description": "To get trade by stocksymbol"
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/trades/users/1",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n   \"tradeId\": 1,\n   \"tradeType\": \"buy\",\n   \"user\": {\n  \t\"userId\": 1,\n  \t\"userName\": \"David\"\n   },\n   \"tradeSymbol\": \"AC\",\n   \"tradeShares\": 28,\n   \"tradePrice\": 162.17\n  \n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/trades/users/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"trades",
+						"users",
+						"1"
+					]
+				},
+				"description": "To get trade by userid"
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/trade",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n   \"tradeId\": 1,\n   \"tradeType\": \"buy\",\n   \"user\": {\n  \t\"userId\": 1,\n  \t\"userName\": \"David\"\n   },\n   \"tradeSymbol\": \"AC\",\n   \"tradeShares\": 28,\n   \"tradePrice\": 162.17\n  \n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/trade",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"trade"
+					]
+				},
+				"description": "To get all trade records"
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/trade",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n   \"tradeId\": 1,\n   \"tradeType\": \"buy\",\n   \"user\": {\n  \t\"userId\": 1,\n  \t\"userName\": \"David\"\n   },\n   \"tradeSymbol\": \"AC\",\n   \"tradeShares\": 28,\n   \"tradePrice\": 162.17\n  \n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/trade",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"trade"
+					]
+				},
+				"description": "To delete all trade records"
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
