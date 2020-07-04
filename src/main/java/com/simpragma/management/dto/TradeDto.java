@@ -4,6 +4,8 @@ import java.io.Serializable;
 import java.math.BigDecimal;
 import java.sql.Timestamp;
 
+import javax.validation.constraints.Size;
+
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class TradeDto implements Comparable<TradeDto>, Serializable {
@@ -14,8 +16,12 @@ public class TradeDto implements Comparable<TradeDto>, Serializable {
 	private String tradeType;
 	private UserDto user;
 	private String tradeSymbol;
+	
+	@Size(min = 10, max = 30, message = "The share value must be between 10 to 30")
 	private int tradeShares;
+	
 	private BigDecimal tradePrice;
+	
 	private Timestamp tradeTimestamp;
 
 	@JsonProperty("id")
