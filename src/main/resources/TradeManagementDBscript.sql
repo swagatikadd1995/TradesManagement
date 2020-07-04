@@ -33,12 +33,12 @@ CREATE TABLE IF NOT EXISTS `trade` (
 -- Dumping data for table trades_management.trade: ~7 rows (approximately)
 /*!40000 ALTER TABLE `trade` DISABLE KEYS */;
 INSERT INTO `trade` (`trade_id`, `trade_type`, `trade_symbol`, `trade_shares`, `trade_price`, `trade_timestamp`, `user_id`) VALUES
-	(2, 'buy', 'AC', '28', 162, '2020-07-03 23:01:02', 1),
+    (2, 'buy', 'AC', '110', 162, '2020-07-04 22:52:21', 1),
 	(3, 'sell', 'DC', '38', 155, '2020-07-03 23:10:21', 1),
-	(4, 'rent', 'FAN', '48', 175, '2020-07-03 23:11:08', 1),
-	(5, 'borrow', 'AC', '54', 146, '2020-07-04 13:24:45', 1),
-	(6, 'borrow', 'AC', '54', 141, '2020-07-04 13:31:01', 1),
-	(7, 'credit', 'AC', '88', 158.78, '2020-07-04 13:32:30', 1),
+	(4, 'buy', 'DC', '48', 175, '2020-07-04 22:52:14', 1),
+	(5, 'sell', 'AC', '54', 146, '2020-07-04 22:51:22', 1),
+	(6, 'sell', 'AC', '54', 141, '2020-07-04 22:51:26', 1),
+	(7, 'buy', 'AC', '88', 158.78, '2020-07-04 22:51:31', 1),
 	(8, 'buy', 'AC', '76', 184.56, '2020-07-04 16:13:53', 1);
 /*!40000 ALTER TABLE `trade` ENABLE KEYS */;
 
